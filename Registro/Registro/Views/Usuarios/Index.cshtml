@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Inicio usuarios";
+}
+
+<br />
+<div class="text-center">
+    <h1 class="display-4">Registro de usuarios</h1>
+    <br />
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id Usuario</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            @{
+                if (ViewBag.Usuarios!=null)
+                {
+                    foreach (var item in ViewBag.Usuarios)
+                    {
+                        <tr>
+                        <td>@item.IdUsuario</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Edad</td>
+                        <td>@item.Correo</td>
+                        </tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+</div>

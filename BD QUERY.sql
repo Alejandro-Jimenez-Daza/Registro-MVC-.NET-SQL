@@ -1,0 +1,25 @@
+CREATE DATABASE REGISTRO_MVC
+
+USE REGISTRO_MVC
+
+CREATE TABLE USUARIOS(
+IdUsuario int identity(1,1) primary key,
+Nombre VARCHAR(50),
+Edad INT,
+Correo VARCHAR(50)
+)
+
+SELECT * FROM USUARIOS
+
+CREATE PROCEDURE SP_REGISTRAR
+@Nombre varchar(50),
+@Edad int,
+@Correo VARCHAR(50)
+as begin
+insert into USUARIOS VALUES(@Nombre, @Edad, @Correo)
+END
+
+CREATE PROCEDURE SP_USUARIOS
+AS BEGIN
+SELECT * FROM USUARIOS
+END
